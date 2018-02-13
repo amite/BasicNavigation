@@ -5,3 +5,7 @@ export const Container = styled.View`
   align-items: center;
   justify-content: center;
 `;
+
+export const ScrollViewContainer = styled.ScrollView`
+  flex: 1;
+`;
