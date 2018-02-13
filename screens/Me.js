@@ -1,21 +1,17 @@
 import React, { Component } from "react";
-import { Text, View, StyleSheet } from "react-native";
+import { Text } from "react-native";
+import { Container } from "../app/styles";
+
+const MeContainer = Container.extend`
+  background-color: skyblue;
+`;
 
 export default class Me extends Component {
   render() {
     return (
-      <View style={styles.container}>
+      <MeContainer>
         <Text>I am here</Text>
-      </View>
+      </MeContainer>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center"
-  }
-});
