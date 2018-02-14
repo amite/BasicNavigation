@@ -1,6 +1,35 @@
 import React, { Component } from "react";
-import { ScrollView } from "react-native";
+import {
+  ScrollView,
+  StyleSheet,
+  View,
+  ImageBackground,
+  Text
+} from "react-native";
 import { Tile, List, ListItem } from "react-native-elements";
+
+var styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#000000",
+    width: "100%",
+    height: "100%"
+  },
+  backdrop: {
+    width: "100%",
+    height: 300,
+    justifyContent: "center",
+    alignItems: "flex-start"
+  },
+  headline: {
+    fontSize: 20,
+    textAlign: "center",
+    backgroundColor: "rgba(0,0,0,0)",
+    color: "white"
+  }
+});
 
 class UserDetail extends Component {
   render() {
@@ -16,13 +45,17 @@ class UserDetail extends Component {
 
     return (
       <ScrollView>
-        <Tile
-          imageSrc={{ uri: picture.large }}
-          featured
-          title={`${name.first.toUpperCase()} ${name.last.toUpperCase()}`}
-          caption={email}
-        />
-
+        <View style={styles.container}>
+          <ImageBackground
+            style={styles.backdrop}
+            source={{
+              uri: picture.large
+            }}
+            resizeMode="cover"
+          >
+            <Text style={styles.headline}>Headline</Text>
+          </ImageBackground>
+        </View>
         <List>
           <ListItem title="Email" rightTitle={email} hideChevron />
           <ListItem title="Phone" rightTitle={phone} hideChevron />
