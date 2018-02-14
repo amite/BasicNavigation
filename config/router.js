@@ -10,7 +10,10 @@ export const FeedStack = StackNavigator({
     screen: Feed
   },
   Details: {
-    screen: UserDetail
+    screen: UserDetail,
+    navigationOptions: ({ navigation }) => ({
+      title: `${navigation.state.params.name.first.toUpperCase()} ${navigation.state.params.name.last.toUpperCase()}`
+    })
   }
 });
 

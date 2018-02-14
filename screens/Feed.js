@@ -10,7 +10,7 @@ const FeedContainer = ScrollViewContainer.extend`
 
 export default class Feed extends Component {
   onLearnMore = user => {
-    this.props.navigation.navigate("Details");
+    this.props.navigation.navigate("Details", { ...user });
   };
 
   render() {
